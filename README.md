@@ -2,6 +2,7 @@
 A webbased jailbreak solution unifying existing jailbreak me solutions and new ones.
 
 Created by Sem Voigtländer
+
 Modified by Ryan Wong
 
 Please read ```RULES.md``` as well
