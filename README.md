@@ -2,6 +2,7 @@
 A webbased jailbreak solution unifying existing jailbreak me solutions and new ones.
 
 Created by Sem Voigtländer
+Modified by Ryan Wong
 
 Please read ```RULES.md``` as well
 
@@ -49,13 +50,14 @@ These modules can be divided into the following stages:
 - Tihmstar https://twitter.com/tihmstar
 - Coolstar https://twitter.com/coolstarorg
 - Luca Todesco https://twitter.com/qwertyoruiopz
-- KJC Research 
-- Comex 
+- KJC Research
+- Comex
 - PanguTeam https://twitter.com/panguteam
 - Ian Beer https://twitter.com/i4nbeer
 - Argp https://twitter.com/_argp
-- Evad3rs 
+- Evad3rs
 - Jonathan Levin (For the jailbreak toolkit)
 - Lokihardt (For being able to pwn browsers within a wink)
 - Sem Voigtländer (just a techie)
 - (@wwwtyro) https://github.com/wwwtyro/cryptico
+- Ryan Wong 
