@@ -100,10 +100,10 @@ function offsets_init() {
 //performs initial eligibillity checks to determine if the client's device is one that the exploit supports
 function sploit_init() {
     var device  = current_device();
-    
+
     if(!supported_browser()) {
-        puts("This exploit only works on MobileSafari.");
-        return false;   
+        puts("This exploit only works on Safari Mobile.");
+        return false;
     }
 
     if(!supported_devicetype()) {
@@ -117,7 +117,7 @@ function sploit_init() {
     }
 
     if(!did_recognize()) {
-        puts("Could not recognize what device this is, are you sure this is iPhone?");
+        puts("Could not recognize what device this is, are you sure this is an iOS device?");
     }
 
     if(needs_offsets()) {
@@ -186,7 +186,7 @@ function strategy_select() {
 
         //Sanity check to only start the strategy when the exploit supports the client's device
         if(supported) {
-            
+
             puts('Chose Niklas B\'s jailbreakme');
             include('libsploit.ios.1131'); //include the strategy module
             start_strategy('wk113go'); //schedule the strategy for launch
@@ -199,11 +199,11 @@ function strategy_select() {
     }
     else if(osversion_between(11.41,11.41)) {
          //We firstly need to check if the client's device model is of one that this strategy supports
-        var supported_devices = ["iPhone 6", "iPhone SE"];
+        var supported_devices = ["iPhone 5S", "iPhone 6", "iPhone SE", "iPhone 7+"];
         var supported = false;
 
         if(!device.ProductName) return false; //Sanity check making sure to only continue if the product name of the device was detected
-        
+
         //The productname detection may return multiple results.
         //Check each individual entry against the supported devices array and stop the search when a supported device is found.
         for(var i = 0; i < supported_devices.length && supported == false; i++) {
@@ -211,7 +211,7 @@ function strategy_select() {
         }
 
         if(supported) {
-            
+
             puts('Chose Kuduma\'s jailbreakme');
             include('libsploit.ios.1141'); //include the strategy module
             start_strategy('wk1141go'); //schedule the strategy for launch
@@ -225,7 +225,7 @@ function strategy_select() {
     else if(osversion_between(12.0, 12.01)){
 
          //We firstly need to check if the client's device model is of one that this strategy supports
-        var supported_devices = ["iPhone 6S", "iPhone SE", "iPhone 8+"];
+        var supported_devices = ["iPhone 6S", "iPhone SE", "iPhone 8+", "iPhone 6S+", "iPhone 7"];
         var supported = false;
 
         if(!device.ProductName) return false; //Sanity check making sure to only continue if the product name of the device was detected
@@ -235,9 +235,9 @@ function strategy_select() {
         for(var i = 0; i < supported_devices.length && supported == false; i++) {
             supported = device.ProductName.indexOf(supported_devices[i]) > -1;
         }
-        
+
         if(supported) {
-            
+
             puts('Chose Kuduma\'s jailbreakme');
             include('libsploit.ios.1201'); //include the strategy module
             start_strategy('wk1201go'); //schedule the strategy for launch
@@ -256,7 +256,7 @@ function sploit_main() {
 
     //A try-catch exception handler providing continuity and verbosity to the runtime
     try {
-        
+
         //Firstly make sure that the initialization stage where eligibility is checked has succeeded, otherwise we exit.
         if(!sploit_init()) {
             puts('Exploit initialization failed');
@@ -268,7 +268,7 @@ function sploit_main() {
         var strategy = strategy_select(); //this will not only select a strategy but also schedule it for launch as soon as posisble/
 
         //A second try-catch gives a better inside in which stage an error occured if one occured.
-        try{ 
+        try{
 
             if(!strategy) {
                 puts("Your device or ios version isn't supported.");
@@ -285,4 +285,3 @@ function sploit_main() {
 
     return true;
 }
-
