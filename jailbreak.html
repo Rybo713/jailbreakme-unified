@@ -32,7 +32,7 @@
 
             //Simply create an object, as OOP is always better
             var Jailbreakme = {
-            	initialized: false, 
+            	initialized: false,
             	callback: function(id){
             		return document.getElementById(id);
             	}
@@ -60,12 +60,12 @@
 					console.log("Updating wallpaper...");
 					setTimeout(
 						function(){
-							document.body.setAttribute('style', 
+							document.body.setAttribute('style',
 								'background: #000 url(\'assets/wallpaper.jpg\');\
 								 background-size: cover;\
 								 background-repeat: no-repeat;'
 							);
-						}, 
+						},
 					0.01); //threaded
 				};
 
@@ -84,7 +84,7 @@
 
 					//if we have any old logs, log them to our output element
 					if(this.log){
-						
+
 						var log_el = document.getElementById('log'); //reference the output element
 
 						if(log_el) { //if we have a reference we can update it with our new log
@@ -114,8 +114,8 @@
 					load_modules();
 					update_wallpaper();
 					init_log();
-					init_crash_watchdog(); 
-				} 
+					init_crash_watchdog();
+				}
 				catch(exc) //if we end up here, we obviously failed to initialize
 				{
 					alert("exception occured.\nStack trace: \n"+exc.stack + "\nreason: "+exc.message);
@@ -145,9 +145,9 @@
 				if(!this.initialized) this.init(); //check if we are initialized, otherwise make sure that we are
 
 				if(sender) { //if we do not have a sender (e.g.: range element) we are trying to jailbreak directly, that should be avoided, we want the user to interact and make sure he is aware of what he is doing
-					
+
 					if(sender.value == 1) {
-						
+
 						var support = document.getElementById('support'); //get a reference to the support element
 
 						if(support != undefined) support.remove(); //in case we have a reference, remove it
@@ -226,7 +226,7 @@
 			</section>
 		</footer>
 		<!--
-			PLEASE NOTE: 
+			PLEASE NOTE:
 			This program is licensed under the license as actively updated on GitHub https://github.com/userlandkernel/jailbreakme-unified.
 			Please respect to work of all individuals involved in the making or the contribution to this framework by giving credit conform the license.
 			This software has been written by Sem Voigtländer and consists of multiple exploits by great minds as credited in the license on GitHub.
