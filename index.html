@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Jailbreakme-Unified</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Jailbreak Me Unified" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Framework for iOS browser exploitation to kernel privileges and rootfs remount" />
+<meta property="og:description" content="Framework for iOS browser exploitation to kernel privileges and rootfs remount" />
+<link rel="canonical" href="https://rybo713.github.io/jailbreakme-unified/" />
+<meta property="og:url" content="https://rybo713.github.io/jailbreakme-unified/" />
+<meta property="og:site_name" content="Jailbreakme-Unified" />
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"Jailbreak Me Unified","url":"https://rybo713.github.io/jailbreakme-unified/","name":"Jailbreakme-Unified","description":"Framework for iOS browser exploitation to kernel privileges and rootfs remount","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/jailbreakme-unified/assets/css/style.css?v=ce8bb4aeaad9c9edd66263a600db3bc75a53dfdc">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="https://rybo713.github.io/jailbreakme-unified/">Jailbreakme-Unified</a></h1>
+        
+        
+
+        <p>Framework for iOS browser exploitation to kernel privileges and rootfs remount</p>
+
+        
+        <p class="view"><a href="https://github.com/Rybo713/jailbreakme-unified">View the Project on GitHub <small>Rybo713/jailbreakme-unified</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="jailbreak-me-1337">Jailbreak Me 13.37</h1>
+<p>A webbased jailbreak solution unifying existing jailbreak me solutions and new ones.</p>
+
+<p>Created by Sem Voigtländer</p>
+
+<p>Please read <code class="highlighter-rouge">RULES.md</code> as well</p>
+
+<h2 id="support">Support</h2>
+
+<ul>
+  <li>8.4.1 &amp; 9.3 up to 9.3.3 &amp; 11.3.1 &amp; 12.0 - 12.0.1 (64-bit)</li>
+  <li>3.1.2 up to 4.0.1 &amp; 8.4.1 and 9.1 up to 9.3.4 (32-bit)</li>
+</ul>
+
+<p>Read more: https://github.com/MTJailed/jailbreakme/blob/master/SUPPORT.md</p>
+
+<h2 id="how-it-works">How it works</h2>
+<p>Using ModularJS various modules are loaded at runtime.</p>
+
+<p>These modules can be divided into the following stages:</p>
+
+<h3 id="1-identification">1. Identification</h3>
+<ul>
+  <li>Uses an information leakage (not vulnerability) in WebGL to detect the GPU of the victim device</li>
+  <li>Uses the browser agent to define what browser and firmware to exploit</li>
+  <li>Uses size and resolution constraints to detect the specific victim device</li>
+  <li>Uses various debugging information about the hardware environment using window.performance or window.navigator</li>
+  <li>Uses benchmarking algorithms and hashing to identify and track the victim device.</li>
+</ul>
+
+<h3 id="2-eligibility">2. Eligibility</h3>
+<ul>
+  <li>Using the identification information the victim is checked against various constraints, such as whether the victim is a mobile device or a desktop.</li>
+</ul>
+
+<h3 id="3-strategy-selection">3. Strategy selection</h3>
+<ul>
+  <li>Based on the eligibility constraints and identity the exploit strategy will be selected for the victim device and loaded.</li>
+</ul>
+
+<h3 id="4-payload-retrieval">4. Payload retrieval</h3>
+<ul>
+  <li>The strategy will load the payload(s) for the victim device, on iOS this can be for example Cydia, on desktops for example a remote administration tool.</li>
+  <li>The payload is aligned so it can be used later when the exploit has created an executable region.</li>
+</ul>
+
+<h3 id="5-exploitation">5. Exploitation</h3>
+<ul>
+  <li>The exploit is started and carefully sets up read/write primitives in the browser memory.</li>
+  <li>Once r/w is gained an executable region is created and the payload is aligned / copied into it.</li>
+  <li>The exploit jumps to the shellcode and starts executing it</li>
+</ul>
+
+<h3 id="6-post-exploitation">6. Post-Exploitation</h3>
+<ul>
+  <li>Various tools and capabilities could be setup after successful completion of the exploit, such as a telnet client to gain a shell on the victim from the browser.</li>
+</ul>
+
+<h2 id="credits">Credits</h2>
+<ul>
+  <li>kudima https://github.com/kudima</li>
+  <li>5aelo https://twitter.com/5aelo</li>
+  <li>Niklas B https://twitter.com/_niklasb</li>
+  <li>Tihmstar https://twitter.com/tihmstar</li>
+  <li>Coolstar https://twitter.com/coolstarorg</li>
+  <li>Luca Todesco https://twitter.com/qwertyoruiopz</li>
+  <li>KJC Research</li>
+  <li>Comex</li>
+  <li>PanguTeam https://twitter.com/panguteam</li>
+  <li>Ian Beer https://twitter.com/i4nbeer</li>
+  <li>Argp https://twitter.com/_argp</li>
+  <li>Evad3rs</li>
+  <li>Jonathan Levin (For the jailbreak toolkit)</li>
+  <li>Lokihardt (For being able to pwn browsers within a wink)</li>
+  <li>Sem Voigtländer (just a techie)</li>
+  <li>(@wwwtyro) https://github.com/wwwtyro/cryptico</li>
+</ul>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/Rybo713">Rybo713</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/jailbreakme-unified/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
